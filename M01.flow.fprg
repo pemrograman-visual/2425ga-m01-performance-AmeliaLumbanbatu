@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M01.flow"/>
+        <attribute name="authors" value="ACER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-18 10:39:12 AM"/>
+        <attribute name="created" value="QUNFUjtMQVBUT1AtSVJTVEE1RVQ7MjAyNC0xMC0xODswOTo1ODowMSBBTTsyNjU1"/>
+        <attribute name="edited" value="QUNFUjtMQVBUT1AtSVJTVEE1RVQ7MjAyNC0xMC0xODsxMDozOToxMiBBTTsxOzI3NTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NilaiHuruf, Kredit" type="String" array="False" size=""/>
+            <declare name="Performa" type="Real" array="False" size=""/>
+            <declare name="NilaiAngka" type="Real" array="False" size=""/>
+            <assign variable="NilaiAngka" expression="0"/>
+            <input variable="Kredit"/>
+            <while expression="Kredit !=&quot;---&quot;">
+                <declare name="SKS" type="Integer" array="False" size=""/>
+                <assign variable="SKS" expression="Tointeger(Kredit)"/>
+                <input variable="NilaiHuruf"/>
+                <if expression="NilaiHuruf=&quot;A&quot;">
+                    <then>
+                        <assign variable="NilaiAngka" expression="4.0"/>
+                    </then>
+                    <else>
+                        <if expression="NilaiHuruf=&quot;AB&quot;">
+                            <then>
+                                <assign variable="NilaiAngka" expression="3.5"/>
+                            </then>
+                            <else>
+                                <if expression="NilaiHuruf=&quot;B&quot;">
+                                    <then>
+                                        <assign variable="NilaiAngka" expression="3.0"/>
+                                    </then>
+                                    <else>
+                                        <if expression="NilaiHuruf=&quot;BC&quot;">
+                                            <then>
+                                                <assign variable="NilaiAngka" expression="2.5"/>
+                                            </then>
+                                            <else>
+                                                <if expression="NilaiHuruf=&quot;C&quot;">
+                                                    <then>
+                                                        <assign variable="NilaiAngka" expression="2.0"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="NilaiHuruf=&quot;D&quot;">
+                                                            <then>
+                                                                <assign variable="NilaiAngka" expression="1.0"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="NilaiHuruf=&quot;E&quot;">
+                                                                    <then>
+                                                                        <assign variable="NilaiAngka" expression="0.0"/>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="Performa" expression="SKS*NilaiAngka"/>
+                <output expression="Performa" newline="True"/>
+                <input variable="Kredit"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
